@@ -15,6 +15,9 @@ interface FooterProps {
 }
 
 export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterProps) {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+  
   const navigationItems = [
     { label: "Início", section: "inicio" },
     { label: "Soluções", section: "solucoes" },
