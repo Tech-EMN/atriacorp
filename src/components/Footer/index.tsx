@@ -254,6 +254,20 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
             </div>
           </motion.div>
 
+           {/* Modais */}
+          <Modal isOpen={isPrivacyOpen} title="Política de Privacidade" onClose={() => setIsPrivacyOpen(false)}>
+            <div className="space-y-4">
+              {/* Conteúdo longo */}
+               {privacyText}
+            </div>
+          </Modal>
+
+          <Modal isOpen={isTermsOpen} title="Termos de Uso" onClose={() => setIsTermsOpen(false)}>
+            <div className="space-y-4">
+               {termsText}
+            </div>
+          </Modal>
+
           {/* Decorative element */}
           <motion.div
             className="flex justify-center pt-8"
