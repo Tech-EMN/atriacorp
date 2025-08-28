@@ -73,6 +73,20 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
     setShowContactModal(true);
   };
 
+  const sendDataToN8N = async (payload: any) => {
+    try {
+      const response = await fetch('https://n8n.servidoremn.site/webhook/51db370d-5b50-42bb-9ef4-8f9a232459c5diagnostico', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      return response.json();
+    } catch (error) {
+      console.error('Erro ao enviar dados para API:', error);
+      throw error;
+    }
+  };
+
   const handleConfirmarAcao = async () => {
     if (!contactData.email || !contactData.telefone) {
       alert('Por favor, preencha seu email e telefone para prosseguir.');
@@ -88,12 +102,7 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
       console.log('Payload do Diagnóstico para API:', JSON.stringify(payload, null, 2));
       
       try {
-        // Aqui será feita a chamada para a API externa quando estiver pronta
-        // const response = await fetch('/api/diagnosticos', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify(payload)
-        // });
+        await sendDataToN8N(payload);
         
         console.log("Enviando relatório por email para:", contactData.email);
         alert("Relatório enviado com sucesso para seu email!");
@@ -104,6 +113,11 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
     } else {
       console.log('Payload do Diagnóstico para geração de PDF:', JSON.stringify(payload, null, 2));
       
+      try{
+        await sendDataToN8N(payload);
+      }catch(error){
+        console.error('Erro ao enviar diagnóstico:', error);
+      }
       // Aqui você implementaria a geração e download do PDF
       console.log("Gerando PDF do diagnóstico...");
       alert("Função de download em desenvolvimento!");
@@ -465,4 +479,4 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
       )}
     </div>
   );
-} 
+}
