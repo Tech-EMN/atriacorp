@@ -5,6 +5,8 @@ import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { FloatingElement } from "@/components/ui/FloatingElement";
+import { Modal } from "@/utils/modal";
+import { privacyText, termsText } from "@/utils/modalContents";
 
 interface FooterProps {
   isMobile: boolean;
