@@ -8,7 +8,7 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { FloatingElement } from "@/components/ui/FloatingElement";
 
 // ✅ Modal importado como default
-import Modal from "@/utils/modal";
+import Modal from "@/utils/Modal";
 // ✅ Textos importados como named
 import { privacyText, termsText } from "@/utils/modalContents";
 
