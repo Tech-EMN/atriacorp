@@ -6,7 +6,10 @@ import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { FloatingElement } from "@/components/ui/FloatingElement";
-import { Modal } from "@/utils/modal";
+
+// ✅ Modal importado como default
+import Modal from "@/utils/modal";
+// ✅ Textos importados como named
 import { privacyText, termsText } from "@/utils/modalContents";
 
 interface FooterProps {
@@ -234,16 +237,11 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
 
           {/* Modais */}
           <Modal isOpen={isPrivacyOpen} title="Política de Privacidade" onClose={() => setIsPrivacyOpen(false)}>
-            <div className="space-y-4">
-              {/* Conteúdo longo */}
-               {privacyText}
-            </div>
+            <div className="space-y-4">{privacyText}</div>
           </Modal>
 
           <Modal isOpen={isTermsOpen} title="Termos de Uso" onClose={() => setIsTermsOpen(false)}>
-            <div className="space-y-4">
-               {termsText}
-            </div>
+            <div className="space-y-4">{termsText}</div>
           </Modal>
         </div>
       </div>
