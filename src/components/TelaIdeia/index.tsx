@@ -37,6 +37,20 @@ export function TelaIdeia({ onVoltar }: TelaIdeiaProps = {}) {
     setShowContactModal(true);
   };
 
+  const sendDataToN8N = async (data: any) => {
+    try {
+      const response = await fetch('https://n8n.servidoremn.site/webhook/51db370d-5b50-42bb-9ef4-8f9a232459c5ideia', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      console.log('Success:', result);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
   const handleSubmit = async () => {
     if (!contactData.nome || !contactData.email) {
       alert('Por favor, preencha ao menos seu nome e email.');
@@ -70,6 +84,8 @@ export function TelaIdeia({ onVoltar }: TelaIdeiaProps = {}) {
       };
 
       console.log('Payload da Ideia para API:', JSON.stringify(payload, null, 2));
+
+      await sendDataToN8N(payload);
       
       // Aqui será feita a chamada para a API externa quando estiver pronta
       // const response = await fetch('/api/ideias', {
@@ -79,7 +95,6 @@ export function TelaIdeia({ onVoltar }: TelaIdeiaProps = {}) {
       // });
 
       // Simulação de sucesso
-      await new Promise(resolve => setTimeout(resolve, 2000));
       setSubmitted(true);
       setShowContactModal(false);
       
