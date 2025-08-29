@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // modalContents.tsx
 import ReactMarkdown from "react-markdown";
 
@@ -303,7 +302,7 @@ export const termsText = (
   </div>
 );
 
-=======
+
 // modalContents.tsx
 import ReactMarkdown from "react-markdown";
 
