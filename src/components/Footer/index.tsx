@@ -8,9 +8,9 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 import { FloatingElement } from "@/components/ui/FloatingElement";
 
 // ✅ Modal importado como default
-import Modal from "@/utils/Modal";
+import Modal from "../../utils/modal";
 // ✅ Textos importados como named
-import { privacyText, termsText } from "@/utils/modalContents";
+import { privacyText, termsText } from "../../utils/modalContents";
 
 interface FooterProps {
   isMobile: boolean;
