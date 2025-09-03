@@ -73,17 +73,17 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
     setShowContactModal(true);
   };
 
-  const sendDataToN8N = async (payload: any) => {
+  const sendDataToN8N = async (data: any) => {
     try {
       const response = await fetch('https://n8n.servidoremn.site/webhook/51db370d-5b50-42bb-9ef4-8f9a232459c5diagnostico', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(data)
       });
-      return response.json();
+      const result = await response.json();
+      console.log('Success:', result);
     } catch (error) {
-      console.error('Erro ao enviar dados para API:', error);
-      throw error;
+      console.error('Error:', error);
     }
   };
 
