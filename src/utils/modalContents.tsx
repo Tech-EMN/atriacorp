@@ -607,4 +607,3 @@ export const termsText = (
   </div>
 );
 
->>>>>>> 90b4314200538bf439d00015c6aa613bd2848f5e
