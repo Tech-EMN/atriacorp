@@ -11,7 +11,7 @@ export type ConsentState = {
   marketing: boolean;
 };
 
-const DEFAULT: ConsentState = { necessary: true, statistics: false, marketing: false };
+
 
 const COOKIE_KEY = "site_cookie_consent_v1";
 
