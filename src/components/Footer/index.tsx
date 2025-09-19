@@ -236,7 +236,9 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
                 transition={{ delay: 0.7 }}
               >
                 <motion.a
-                  href="#"
+                  href="/politica-de-privacidade"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
                 >
