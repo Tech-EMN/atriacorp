@@ -246,7 +246,9 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
                 </motion.a>
                 <span className="text-white/20">•</span>
                 <motion.a
-                  href="#"
+                  href="/termos-de-uso"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
                 >
