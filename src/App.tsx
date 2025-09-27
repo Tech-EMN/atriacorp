@@ -4,7 +4,6 @@ import IndexPage from "@/pages/index";
 import PoliticaDePrivacidade from "@/pages/politica-de-privacidade";
 import TermosDeUso from "@/pages/termos-de-uso";
 import DefaultLayout from "@/layouts/default";
-import { Footer } from "@/components/Footer";
 
 
 function App() {
