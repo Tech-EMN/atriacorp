@@ -254,6 +254,16 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
                 >
                   Termos de Uso
                 </motion.a>
+                <span className="text-white/20">•</span>
+                <motion.a
+                  href="https://drive.google.com/file/d/1YvxBFPQ3oJFjUjKUTuhYdGHkpX1PiTHb/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors duration-200"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  Políticas de Cookie
+                </motion.a>
               </motion.div>
             </div>
           </motion.div>
