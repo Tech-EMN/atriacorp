@@ -73,6 +73,15 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
     setShowContactModal(true);
   };
 
+  // Google Ads conversion tracking helper
+  const trackConversion = (conversionId: string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': conversionId
+      });
+    }
+  };
+
   const sendDataToN8N = async (data: any) => {
     try {
       const response = await fetch('https://n8n.servidoremn.site/webhook/51db370d-5b50-42bb-9ef4-8f9a232459c5diagnostico', {
@@ -104,6 +113,9 @@ export function ResultadoDiagnostico({ dados, onVoltar }: ResultadoDiagnosticoPr
       try {
         await sendDataToN8N(payload);
         
+        // Track Lead Conversion
+        trackConversion('AW-17727916408/m6PHCOmI-8YbEPiSqoVC');
+
         console.log("Enviando relatório por email para:", contactData.email);
         alert("Relatório enviado com sucesso para seu email!");
       } catch (error) {
