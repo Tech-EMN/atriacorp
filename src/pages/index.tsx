@@ -45,6 +45,13 @@ export default function IndexPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
+
+      // Page View Conversion
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17727916408/K5ttCOyI-8YbEPiSqoVC'
+        });
+      }
     }, 3500); // 3.5 seconds loading
 
     return () => clearTimeout(timer);

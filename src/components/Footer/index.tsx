@@ -114,7 +114,14 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
               >
                 <MagneticButton
                   size={isMobile ? "sm" : "md"}
-                  onClick={() => onOpenDiagnostico?.()}
+                  onClick={() => {
+                    onOpenDiagnostico?.();
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'conversion', {
+                        'send_to': 'AW-17727916408/Sx5ZCPKI-8YbEPiSqoVC'
+                      });
+                    }
+                  }}
                   className="mt-4"
                 >
                   Fazer diagnóstico

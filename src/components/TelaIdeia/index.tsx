@@ -86,6 +86,13 @@ export function TelaIdeia({ onVoltar }: TelaIdeiaProps = {}) {
       console.log('Payload da Ideia para API:', JSON.stringify(payload, null, 2));
 
       await sendDataToN8N(payload);
+
+      // Track Contact Conversion (using "Contato" snippet)
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17727916408/2_BBCPWI-8YbEPiSqoVC'
+        });
+      }
       
       // Aqui será feita a chamada para a API externa quando estiver pronta
       // const response = await fetch('/api/ideias', {

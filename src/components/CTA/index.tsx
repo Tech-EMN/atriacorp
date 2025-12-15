@@ -138,7 +138,14 @@ export function CTA({ onOpenDiagnostico, onOpenIdeia }: CTAProps = {}) {
               <MagneticButton 
                 size="lg" 
                 className="relative text-lg px-8 py-4 bg-gradient-to-r from-headerButton to-headerButton/80 shadow-2xl shadow-headerButton/30"
-                onClick={() => onOpenDiagnostico?.()}
+                onClick={() => {
+                  onOpenDiagnostico?.();
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'conversion', {
+                      'send_to': 'AW-17727916408/Sx5ZCPKI-8YbEPiSqoVC'
+                    });
+                  }
+                }}
               >
                 Fazer Diagnóstico I.A.
                 <GoArrowUpRight size={20} />
@@ -149,7 +156,14 @@ export function CTA({ onOpenDiagnostico, onOpenIdeia }: CTAProps = {}) {
               size="lg" 
               variant="secondary" 
               className="text-lg px-8 py-4"
-              onClick={() => onOpenIdeia?.()}
+              onClick={() => {
+                onOpenIdeia?.();
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'conversion', {
+                    'send_to': 'AW-17727916408/bj5BCO-I-8YbEPiSqoVC'
+                  });
+                }
+              }}
             >
               Tenho uma ideia
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
