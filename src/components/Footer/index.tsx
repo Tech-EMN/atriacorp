@@ -263,7 +263,7 @@ export function Footer({ isMobile, scrollToSection, onOpenDiagnostico }: FooterP
                 </motion.a>
                 <span className="text-white/20">•</span>
                 <motion.a
-                  href="https://drive.google.com/file/d/1YvxBFPQ3oJFjUjKUTuhYdGHkpX1PiTHb/view?usp=sharing"
+                  href="/politica-de-cookies"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors duration-200"
